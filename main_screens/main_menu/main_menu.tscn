@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8dnw56t41d44"]
+
+[ext_resource type="FontFile" uid="uid://bkxa3xvcsxrbk" path="res://shared_resources/fonts/roboto/static/Roboto-Bold.ttf" id="1_ikpad"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3vf2"]
+bg_color = Color(0.160784, 0.678431, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0, 0.301961, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1udwp"]
+bg_color = Color(0.160784, 0.678431, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.529412, 0.317647, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ch6j"]
+bg_color = Color(0.160784, 0.678431, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.466667, 0.658824, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Start" type="Button" parent="Center/VBox"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ikpad")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_r3vf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1udwp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ch6j")
+text = "START"
+
+[node name="Options" type="Button" parent="Center/VBox"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ikpad")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_r3vf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1udwp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ch6j")
+text = "OPTIONS"
+
+[node name="Credits" type="Button" parent="Center/VBox"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ikpad")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_r3vf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1udwp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ch6j")
+text = "CREDITS"

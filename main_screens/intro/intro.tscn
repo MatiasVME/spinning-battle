@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1raixs88qyj7"]
+
+[ext_resource type="FontFile" uid="uid://bkxa3xvcsxrbk" path="res://shared_resources/fonts/roboto/static/Roboto-Bold.ttf" id="1_obl8q"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Intro" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0.301961, 1)
+theme_override_colors/font_outline_color = Color(0.160784, 0.678431, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_obl8q")
+theme_override_font_sizes/font_size = 48
+text = "In the year 3000 no one is allowed to oppose a spinning top fight. All political agreements are conducted with spinning top battles. And the great world leader Michumucha threatens to turn the world upside down. What the hell is wrong with that guy!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Background2" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
