@@ -9,12 +9,10 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(1, 0, 0.301961, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_size = 4
-shadow_offset = Vector2(2, 2)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1udwp"]
 bg_color = Color(0.160784, 0.678431, 1, 1)
@@ -23,12 +21,10 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0, 0.529412, 0.317647, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_size = 4
-shadow_offset = Vector2(2, 2)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ch6j"]
 bg_color = Color(0.160784, 0.678431, 1, 1)
@@ -37,15 +33,21 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(1, 0.466667, 0.658824, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_size = 4
-shadow_offset = Vector2(2, 2)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -70,10 +72,23 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 20
 
+[node name="Intro" type="Label" parent="Center/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.466667, 0.658824, 1)
+theme_override_colors/font_outline_color = Color(0.160784, 0.678431, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_ikpad")
+theme_override_font_sizes/font_size = 100
+text = "Spinnig Battle"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="Start" type="Button" parent="Center/VBox"]
 clip_contents = true
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
 theme_override_fonts/font = ExtResource("1_ikpad")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/hover = SubResource("StyleBoxFlat_r3vf2")
@@ -85,6 +100,7 @@ text = "START"
 clip_contents = true
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
 theme_override_fonts/font = ExtResource("1_ikpad")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/hover = SubResource("StyleBoxFlat_r3vf2")
@@ -96,6 +112,7 @@ text = "OPTIONS"
 clip_contents = true
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
 theme_override_fonts/font = ExtResource("1_ikpad")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/hover = SubResource("StyleBoxFlat_r3vf2")

@@ -1,6 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1raixs88qyj7"]
+[gd_scene load_steps=5 format=3 uid="uid://c1raixs88qyj7"]
 
 [ext_resource type="FontFile" uid="uid://bkxa3xvcsxrbk" path="res://shared_resources/fonts/roboto/static/Roboto-Bold.ttf" id="1_obl8q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6oqgn"]
+bg_color = Color(0.160784, 0.678431, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0, 0.301961, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cu812"]
+bg_color = Color(0.160784, 0.678431, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.529412, 0.317647, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u37f4"]
+bg_color = Color(0.160784, 0.678431, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.466667, 0.658824, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -17,7 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(1, 0.945098, 0.909804, 1)
 
 [node name="Intro" type="Label" parent="."]
 layout_mode = 1
@@ -26,7 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0, 0.301961, 1)
+theme_override_colors/font_color = Color(1, 0.466667, 0.658824, 1)
 theme_override_colors/font_outline_color = Color(0.160784, 0.678431, 1, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("1_obl8q")
@@ -45,3 +81,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Continue" type="Button" parent="Margin"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_fonts/font = ExtResource("1_obl8q")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/hover = SubResource("StyleBoxFlat_6oqgn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cu812")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u37f4")
+text = "Continue"
