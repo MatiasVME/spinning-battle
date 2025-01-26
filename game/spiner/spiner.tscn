@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bildg5q5iqwyj" path="res://game/spiner/spiner_player.png" id="3_yruae"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p6msk"]
-bounce = 1.0
+bounce = 0.8
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_frgsf"]
 radius = 34.0147
@@ -101,7 +101,7 @@ tracks/0/path = NodePath("Sprite:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
+"times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
@@ -130,7 +130,6 @@ _data = {
 
 [node name="Spiner" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_p6msk")
-lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_xpuqu")

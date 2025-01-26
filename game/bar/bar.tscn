@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxd0bxq1sqix6"]
+
+[ext_resource type="Texture2D" uid="uid://cxq116wrcqqq0" path="res://game/bar/barraDeTiro.png" id="1_jm1t2"]
+[ext_resource type="Texture2D" uid="uid://cctg5ary321yf" path="res://game/bar/TrompoMedidor.png" id="2_nh5hx"]
+
+[node name="Bar" type="Node2D"]
+
+[node name="Bar" type="Sprite2D" parent="."]
+texture = ExtResource("1_jm1t2")
+
+[node name="Spinner" type="Sprite2D" parent="Bar"]
+position = Vector2(-241, -16)
+scale = Vector2(0.260892, 0.260892)
+texture = ExtResource("2_nh5hx")

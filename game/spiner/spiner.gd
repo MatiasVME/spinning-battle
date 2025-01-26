@@ -22,10 +22,10 @@ func _process(delta: float) -> void:
 		50
 	)
 	
-
 	_colliding_bodies = get_colliding_bodies()
 	if _colliding_bodies.size() > 0:
-		acel = INITIAL_ACEL
-		#apply_central_impulse(Vector2(randi_range(-50, 50), randi_range(-50, 50)))
-		$AnimHit.play("hit")
+		if _colliding_bodies[0] is Spiner:
+			acel = INITIAL_ACEL
+			#apply_central_impulse(Vector2(randi_range(-50, 50), randi_range(-50, 50)))
+			$AnimHit.play("hit")
 		
