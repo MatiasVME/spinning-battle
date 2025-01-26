@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pl0vk745ppcn"
-path="res://.godot/imported/player.png-99d195b4b10a03b7e1088962b50c29f4.ctex"
+uid="uid://siqelu8xot0r"
+path="res://.godot/imported/mapaBatalla.png-6f4be9c52c1af8b661612ce1c92d78d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player.png"
-dest_files=["res://.godot/imported/player.png-99d195b4b10a03b7e1088962b50c29f4.ctex"]
+source_file="res://game/stage/mapaBatalla.png"
+dest_files=["res://.godot/imported/mapaBatalla.png-6f4be9c52c1af8b661612ce1c92d78d9.ctex"]
 
 [params]
 

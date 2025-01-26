@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d13xfdsi4bpip"]
+
+[ext_resource type="Texture2D" uid="uid://siqelu8xot0r" path="res://game/stage/mapaBatalla.png" id="1_nnjvv"]
+
+[node name="Stage" type="Node2D"]
+
+[node name="Floor" type="Sprite2D" parent="."]
+texture = ExtResource("1_nnjvv")
+centered = false

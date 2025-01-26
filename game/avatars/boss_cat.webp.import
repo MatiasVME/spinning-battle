@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpm3lsv5e6t2p"
-path="res://.godot/imported/mapaBatalla.webp-621108674b22d7b96f0d97eee27762e3.ctex"
+uid="uid://b808qfbqockur"
+path="res://.godot/imported/boss_cat.webp-c1bf4209f6011cc178eb2878b8215ec1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/mapaBatalla.webp"
-dest_files=["res://.godot/imported/mapaBatalla.webp-621108674b22d7b96f0d97eee27762e3.ctex"]
+source_file="res://game/avatars/boss_cat.webp"
+dest_files=["res://.godot/imported/boss_cat.webp-c1bf4209f6011cc178eb2878b8215ec1.ctex"]
 
 [params]
 
