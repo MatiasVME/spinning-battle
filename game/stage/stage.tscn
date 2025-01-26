@@ -7,3 +7,9 @@
 [node name="Floor" type="Sprite2D" parent="."]
 texture = ExtResource("1_nnjvv")
 centered = false
+metadata/_edit_lock_ = true
+
+[node name="Edges" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon" type="CollisionPolygon2D" parent="Edges"]
+polygon = PackedVector2Array(92, 145, 1174, 151, 1178, 681, 84, 682, 88, 65, 28, 66, 29, 735, 1259, 725, 1248, 70, 91, 65)

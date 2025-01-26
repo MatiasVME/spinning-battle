@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2itqdhuwutdm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p6msk"]
+
+[node name="Spiner" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_p6msk")
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
