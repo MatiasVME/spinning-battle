@@ -7,14 +7,7 @@ var boss_spiner : Spinner
 
 
 func _ready() -> void:
-	create_player_spiner()
-	create_boss_spiner()
-	
-	player_spiner.ref_enemy_spinner = boss_spiner
-	boss_spiner.ref_enemy_spinner = player_spiner
-	
-	Signals.player_dead.connect(_on_player_dead)
-	Signals.enemy_dead.connect(_on_enemy_dead)
+	Signals.started.connect(_on_started)
 
 
 func create_player_spiner():
@@ -33,6 +26,17 @@ func create_boss_spiner():
 	boss_spiner.get_node("Sprite").animation = "cat"
 	
 	add_child(spiner_inst)
+
+
+func _on_started():
+	create_player_spiner()
+	create_boss_spiner()
+	
+	player_spiner.ref_enemy_spinner = boss_spiner
+	boss_spiner.ref_enemy_spinner = player_spiner
+	
+	Signals.player_dead.connect(_on_player_dead)
+	Signals.enemy_dead.connect(_on_enemy_dead)
 
 
 func _on_player_dead():

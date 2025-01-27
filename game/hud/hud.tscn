@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ffuxbuuj0hvv"]
+[gd_scene load_steps=11 format=3 uid="uid://ffuxbuuj0hvv"]
 
 [ext_resource type="Script" path="res://game/hud/hud.gd" id="1_aur1m"]
 [ext_resource type="Texture2D" uid="uid://siqelu8xot0r" path="res://game/stage/mapaBatalla.png" id="1_phir1"]
 [ext_resource type="Texture2D" uid="uid://bkmohkyyah5j3" path="res://game/avatars/player.webp" id="2_jyk6s"]
 [ext_resource type="Texture2D" uid="uid://b808qfbqockur" path="res://game/avatars/boss_cat.webp" id="3_m6e2j"]
+[ext_resource type="Texture2D" uid="uid://bqxng8gv5gmii" path="res://game/avatars/bossKing.png" id="5_dqweu"]
+[ext_resource type="Texture2D" uid="uid://dy3d4dmjf1mbq" path="res://game/avatars/bossLagarto.png" id="6_vno1h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j3y4"]
 bg_color = Color(0.372549, 0.341176, 0.309804, 1)
@@ -37,6 +39,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"cat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dqweu")
+}],
+"loop": true,
+"name": &"king",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vno1h")
+}],
+"loop": true,
+"name": &"lagarto",
 "speed": 5.0
 }]
 

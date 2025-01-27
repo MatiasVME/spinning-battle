@@ -1,6 +1,8 @@
 extends Node
 
 
+signal started()
+
 signal boosted(force, is_player)
 
 signal player_hp_changed(new_hp)

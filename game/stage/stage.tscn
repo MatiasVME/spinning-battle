@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d13xfdsi4bpip"]
+[gd_scene load_steps=6 format=3 uid="uid://d13xfdsi4bpip"]
 
 [ext_resource type="Script" path="res://game/stage/stage.gd" id="1_4pmbq"]
 [ext_resource type="Texture2D" uid="uid://siqelu8xot0r" path="res://game/stage/mapaBatalla.png" id="1_nnjvv"]
 [ext_resource type="PackedScene" uid="uid://dxd0bxq1sqix6" path="res://game/bar/bar.tscn" id="3_nma2k"]
 [ext_resource type="PackedScene" uid="uid://ffuxbuuj0hvv" path="res://game/hud/hud.tscn" id="4_cjk3c"]
+[ext_resource type="PackedScene" uid="uid://py0bgy0hljym" path="res://game/cooldown/cooldown.tscn" id="5_vslli"]
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_4pmbq")
@@ -21,9 +22,15 @@ metadata/_edit_lock_ = true
 
 [node name="Bar" parent="." instance=ExtResource("3_nma2k")]
 offset_left = 396.0
-offset_top = 56.0
+offset_top = 76.0
 offset_right = 878.0
-offset_bottom = 83.0
+offset_bottom = 103.0
 value = 0.0
 
 [node name="Hud" parent="." instance=ExtResource("4_cjk3c")]
+
+[node name="Cooldown" parent="." instance=ExtResource("5_vslli")]
+offset_left = 631.0
+offset_top = 385.0
+offset_right = 631.0
+offset_bottom = 385.0

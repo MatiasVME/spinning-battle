@@ -1,6 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://py0bgy0hljym"]
+[gd_scene load_steps=10 format=3 uid="uid://py0bgy0hljym"]
 
+[ext_resource type="Script" path="res://game/cooldown/cooldown.gd" id="1_babwa"]
 [ext_resource type="FontFile" uid="uid://bkxa3xvcsxrbk" path="res://shared_resources/fonts/roboto/static/Roboto-Bold.ttf" id="1_fdjau"]
+[ext_resource type="AudioStream" uid="uid://cqde6qls103bh" path="res://shared_resources/audio/sfx/1.ogg" id="3_jw5nu"]
+[ext_resource type="AudioStream" uid="uid://u5e0nivewdss" path="res://shared_resources/audio/sfx/2.ogg" id="4_dm4do"]
+[ext_resource type="AudioStream" uid="uid://ligf283hem82" path="res://shared_resources/audio/sfx/3.ogg" id="5_rn6wf"]
+[ext_resource type="AudioStream" uid="uid://p8g66qxua45t" path="res://shared_resources/audio/sfx/go.ogg" id="6_aibwe"]
 
 [sub_resource type="Animation" id="Animation_aiwhx"]
 length = 0.001
@@ -26,11 +31,11 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_2qo5o"]
-resource_name = "Show"
+resource_name = "show"
 length = 5.0
 step = 0.1
 tracks/0/type = "value"
@@ -57,11 +62,35 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_jw5nu"), ExtResource("4_dm4do"), ExtResource("5_rn6wf"), ExtResource("6_aibwe")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vocmm"]
 _data = {
 "RESET": SubResource("Animation_aiwhx"),
-"Show": SubResource("Animation_2qo5o")
+"show": SubResource("Animation_2qo5o")
 }
 
 [node name="Cooldown" type="Control"]
@@ -71,8 +100,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_babwa")
 
 [node name="Intro" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -102,4 +133,10 @@ autowrap_mode = 3
 libraries = {
 "": SubResource("AnimationLibrary_vocmm")
 }
-autoplay = "Show"
+autoplay = "show"
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jw5nu")
+volume_db = -20.0
+
+[connection signal="animation_finished" from="Anim" to="." method="_on_anim_animation_finished"]

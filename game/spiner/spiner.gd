@@ -43,6 +43,7 @@ func _process(delta: float) -> void:
 		
 		$Sprite["self_modulate"] = Color.WHITE
 		can_damage = false
+		_play_rand_sound_bounce()
 
 
 func _on_boosted(force, is_player):
@@ -56,6 +57,16 @@ func impulse_to_enemy(force):
 	if is_instance_valid(ref_enemy_spinner) and is_instance_valid(self):
 		var dir = (ref_enemy_spinner.global_position - global_position).normalized()
 		apply_central_impulse(dir * force)
+
+
+func _play_rand_sound_hit():
+	var rand_sound = $Hits.get_children()
+	rand_sound[randi_range(0, rand_sound.size() - 1)].play()
+
+
+func _play_rand_sound_bounce():
+	var rand_sound = $Bounce.get_children()
+	rand_sound[randi_range(0, rand_sound.size() - 1)].play()
 
 
 func _on_timer_timeout() -> void:
@@ -81,11 +92,13 @@ func _on_area_body_entered(body: Node2D) -> void:
 			calc_damage = int((absi(linear_velocity.x) + absi(linear_velocity.y)) * 0.2)
 			Main.player_hp -= calc_damage
 		
-		if calc_damage != 0:
+		if calc_damage != 0 and can_damage:
 			var damage_effect = damage_effect_rec.instantiate()
 			damage_effect.show_damage(calc_damage)
 			get_parent().add_child(damage_effect)
 			damage_effect.global_position = ref_enemy_spinner.global_position
+			
+			_play_rand_sound_hit()
 		
 		$Sprite["self_modulate"] = Color.WHITE
 		can_damage = false
