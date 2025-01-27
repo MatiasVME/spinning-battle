@@ -12,6 +12,9 @@ func _ready() -> void:
 	
 	player_spiner.ref_enemy_spinner = boss_spiner
 	boss_spiner.ref_enemy_spinner = player_spiner
+	
+	Signals.player_dead.connect(_on_player_dead)
+	Signals.enemy_dead.connect(_on_enemy_dead)
 
 
 func create_player_spiner():
@@ -30,3 +33,11 @@ func create_boss_spiner():
 	boss_spiner.get_node("Sprite").animation = "cat"
 	
 	add_child(spiner_inst)
+
+
+func _on_player_dead():
+	player_spiner.queue_free()
+
+
+func _on_enemy_dead():
+	boss_spiner.queue_free()

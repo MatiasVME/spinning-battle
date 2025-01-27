@@ -19,6 +19,7 @@ var is_player := true
 
 var last_force := 0
 
+
 func _ready() -> void:
 	if is_player:
 		Signals.boosted.connect(_on_boosted)
@@ -39,17 +40,7 @@ func _process(delta: float) -> void:
 	if _colliding_bodies.size() > 0:
 		if _colliding_bodies[0] is Spinner:
 			acel = INITIAL_ACEL
-				##var calc_damage = int((absi(linear_velocity.x) + absi(linear_velocity.y)) * 0.05)
-			#var calc_damage = last_force * 0.2
-			#
-			#if is_player and can_damage:
-				#Main.enemy_hp -= calc_damage
-				#
-				#var damage_effect = damage_effect_rec.instantiate()
-				#damage_effect.show_damage(calc_damage)
-				#get_parent().add_child(damage_effect)
-				#damage_effect.global_position = global_position
-			#
+		
 		$Sprite["self_modulate"] = Color.WHITE
 		can_damage = false
 
@@ -62,8 +53,9 @@ func _on_boosted(force, is_player):
 
 
 func impulse_to_enemy(force):
-	var dir = (ref_enemy_spinner.global_position - global_position).normalized()
-	apply_central_impulse(dir * force)
+	if is_instance_valid(ref_enemy_spinner) and is_instance_valid(self):
+		var dir = (ref_enemy_spinner.global_position - global_position).normalized()
+		apply_central_impulse(dir * force)
 
 
 func _on_timer_timeout() -> void:
