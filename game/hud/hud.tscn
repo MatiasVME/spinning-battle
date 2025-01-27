@@ -73,8 +73,8 @@ offset_right = 440.0
 offset_bottom = 40.0
 theme_override_styles/background = SubResource("StyleBoxFlat_3j3y4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_p6320")
+max_value = 1000.0
 step = 1.0
-value = 50.0
 show_percentage = false
 
 [node name="AvatarEnemy" type="AnimatedSprite2D" parent="."]
@@ -91,6 +91,6 @@ offset_right = 1057.0
 offset_bottom = 40.0
 theme_override_styles/background = SubResource("StyleBoxFlat_3j3y4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_u4myk")
+max_value = 1000.0
 step = 1.0
-value = 50.0
 show_percentage = false

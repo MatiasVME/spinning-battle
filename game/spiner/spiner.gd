@@ -7,6 +7,8 @@ const INITIAL_ACEL = 0.5
 var acel := INITIAL_ACEL
 var speed := 100
 
+var can_damage := false
+
 var _colliding_bodies
 
 var is_player := true
@@ -31,13 +33,25 @@ func _process(delta: float) -> void:
 	if _colliding_bodies.size() > 0:
 		if _colliding_bodies[0] is Spiner:
 			acel = INITIAL_ACEL
-			#apply_central_impulse(Vector2(randi_range(-50, 50), randi_range(-50, 50)))
-			#$AnimHit.play("hit")
+			
+			if is_player:
+				var calc_damage = int((absi(linear_velocity.x) + absi(linear_velocity.y)) * 0.05)
+				Main.enemy_hp -= calc_damage
+				$Damage.text = str(calc_damage)
+				print("enemy - ", int((absi(linear_velocity.x) + absi(linear_velocity.y)) * 0.05))
+			else:
+				var calc_damage = int((absi(linear_velocity.x) + absi(linear_velocity.y)) * 0.05)
+				Main.player_hp -= calc_damage
+				$Damage.text = str(calc_damage)
+				print("player - ", calc_damage)
+			
 		$Sprite["self_modulate"] = Color.WHITE
+		can_damage = false
 
 
 func _on_boosted(force, is_player):
 	$Sprite["self_modulate"] = Color.RED
+	can_damage = true
 
 
 func _on_timer_timeout() -> void:
@@ -46,6 +60,7 @@ func _on_timer_timeout() -> void:
 		$Timer.start()
 		
 		$Sprite["self_modulate"] = Color.RED
+		can_damage = true
 		Signals.boosted.emit($Timer.wait_time * 250, is_player)
 	else:
 		$Timer.stop()

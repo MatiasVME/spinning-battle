@@ -18,6 +18,7 @@ config/icon="res://game/avatars/player.webp"
 [autoload]
 
 Signals="*res://game/autoloads/Signals.gd"
+Main="*res://game/autoloads/Main.gd"
 
 [display]
 

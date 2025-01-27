@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2itqdhuwutdm"]
+[gd_scene load_steps=14 format=3 uid="uid://c2itqdhuwutdm"]
 
 [ext_resource type="Script" path="res://game/spiner/spiner.gd" id="1_xpuqu"]
 [ext_resource type="Texture2D" uid="uid://dbhtx7x0kl5dw" path="res://game/spiner/spiner_cat.png" id="2_63yhg"]
 [ext_resource type="Texture2D" uid="uid://bildg5q5iqwyj" path="res://game/spiner/spiner_player.png" id="3_yruae"]
+[ext_resource type="FontFile" uid="uid://c4tqwnpph4huo" path="res://shared_resources/fonts/roboto/static/Roboto-ExtraBold.ttf" id="4_kwm3p"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p6msk"]
 bounce = 0.8
@@ -130,6 +131,9 @@ _data = {
 
 [node name="Spiner" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_p6msk")
+can_sleep = false
+lock_rotation = true
+freeze_mode = 1
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_xpuqu")
@@ -156,5 +160,16 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 6.0
 autostart = true
+
+[node name="Damage" type="Label" parent="."]
+offset_left = 22.0
+offset_top = -40.0
+offset_right = 57.0
+offset_bottom = -21.0
+theme_override_colors/font_color = Color(1, 0, 0.301961, 1)
+theme_override_colors/font_outline_color = Color(1, 0.466667, 0.658824, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_kwm3p")
+text = "-444"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

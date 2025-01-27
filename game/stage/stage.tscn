@@ -24,5 +24,6 @@ offset_left = 396.0
 offset_top = 56.0
 offset_right = 878.0
 offset_bottom = 83.0
+value = 0.0
 
 [node name="Hud" parent="." instance=ExtResource("4_cjk3c")]
