@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://clmyg13e1voj0"]
+
+[ext_resource type="Script" path="res://game/autoloads/damage_effect.gd" id="1_xhnn6"]
+[ext_resource type="FontFile" uid="uid://c4tqwnpph4huo" path="res://shared_resources/fonts/roboto/static/Roboto-ExtraBold.ttf" id="2_i1td2"]
+
+[node name="DamageEffect" type="Node2D"]
+script = ExtResource("1_xhnn6")
+
+[node name="Damage" type="Label" parent="."]
+offset_left = -17.0
+offset_top = -10.0
+offset_right = 18.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(1, 0, 0.301961, 1)
+theme_override_colors/font_outline_color = Color(1, 0.466667, 0.658824, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_i1td2")
+text = "-444"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
