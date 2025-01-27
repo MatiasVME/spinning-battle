@@ -1,14 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxd0bxq1sqix6"]
+[gd_scene load_steps=4 format=3 uid="uid://dxd0bxq1sqix6"]
 
-[ext_resource type="Texture2D" uid="uid://cxq116wrcqqq0" path="res://game/bar/barraDeTiro.png" id="1_jm1t2"]
-[ext_resource type="Texture2D" uid="uid://cctg5ary321yf" path="res://game/bar/TrompoMedidor.png" id="2_nh5hx"]
+[ext_resource type="Script" path="res://game/bar/bar.gd" id="1_0htlm"]
 
-[node name="Bar" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4lao"]
+bg_color = Color(0.372549, 0.341176, 0.309804, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
-[node name="Bar" type="Sprite2D" parent="."]
-texture = ExtResource("1_jm1t2")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqkwq"]
+bg_color = Color(1, 0.466667, 0.658824, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
-[node name="Spinner" type="Sprite2D" parent="Bar"]
-position = Vector2(-241, -16)
-scale = Vector2(0.260892, 0.260892)
-texture = ExtResource("2_nh5hx")
+[node name="ForceBar" type="ProgressBar"]
+offset_left = -241.0
+offset_right = 241.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_g4lao")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fqkwq")
+max_value = 2000.0
+step = 1.0
+value = 500.0
+show_percentage = false
+script = ExtResource("1_0htlm")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

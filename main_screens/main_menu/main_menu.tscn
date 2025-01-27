@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8dnw56t41d44"]
+[gd_scene load_steps=8 format=3 uid="uid://c8dnw56t41d44"]
 
 [ext_resource type="FontFile" uid="uid://bkxa3xvcsxrbk" path="res://shared_resources/fonts/roboto/static/Roboto-Bold.ttf" id="1_ikpad"]
 [ext_resource type="Script" path="res://main_screens/main_menu/main_menu.gd" id="1_lo8ma"]
 [ext_resource type="Texture2D" uid="uid://bkmohkyyah5j3" path="res://game/avatars/player.webp" id="2_bk7be"]
+[ext_resource type="Texture2D" uid="uid://c6wqabxilr7cl" path="res://logo.png" id="4_pvfad"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3vf2"]
 bg_color = Color(0.160784, 0.678431, 1, 1)
@@ -57,23 +58,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Intro" type="Label" parent="."]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 118.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 0.466667, 0.658824, 1)
-theme_override_colors/font_outline_color = Color(0.160784, 0.678431, 1, 1)
-theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("1_ikpad")
-theme_override_font_sizes/font_size = 100
-text = "Spinnig Crazy Battle"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -91,6 +75,10 @@ grow_vertical = 2
 [node name="VBox" type="VBoxContainer" parent="Center"]
 layout_mode = 2
 theme_override_constants/separation = 20
+
+[node name="Void" type="Control" parent="Center/VBox"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
 
 [node name="Start" type="Button" parent="Center/VBox"]
 clip_contents = true
@@ -135,5 +123,16 @@ offset_top = 142.0
 offset_right = 486.0
 offset_bottom = 789.0
 texture = ExtResource("2_bk7be")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture = ExtResource("4_pvfad")
 
 [connection signal="pressed" from="Center/VBox/Start" to="." method="_on_start_pressed"]
