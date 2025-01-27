@@ -2,15 +2,16 @@ extends Node2D
 
 var spiner = preload("res://game/spiner/spiner.tscn")
 
-var player_spiner : Spiner
-var boss_spiner : Spiner
+var player_spiner : Spinner
+var boss_spiner : Spinner
 
 
 func _ready() -> void:
-	Signals.boosted.connect(_on_boosted)
-	
 	create_player_spiner()
 	create_boss_spiner()
+	
+	player_spiner.ref_enemy_spinner = boss_spiner
+	boss_spiner.ref_enemy_spinner = player_spiner
 
 
 func create_player_spiner():
@@ -29,12 +30,3 @@ func create_boss_spiner():
 	boss_spiner.get_node("Sprite").animation = "cat"
 	
 	add_child(spiner_inst)
-
-
-func _on_boosted(force, is_player):
-	if is_player:
-		var dir = (boss_spiner.global_position - player_spiner.global_position).normalized()
-		player_spiner.apply_central_impulse(dir * force)
-	else:
-		var dir = (player_spiner.global_position - boss_spiner.global_position).normalized()
-		boss_spiner.apply_central_impulse(dir * force)
