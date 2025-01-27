@@ -3,7 +3,6 @@ extends ProgressBar
 var is_pressed := false
 var is_releassed := false
 
-signal forced(force)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
@@ -15,10 +14,10 @@ func _input(event: InputEvent) -> void:
 		is_pressed = false
 		
 		$Timer.stop()
-		forced.emit(value)
+		Signals.boosted.emit(value, true)
 		value = 0
 
 
 func _on_timer_timeout() -> void:
 	if is_pressed:
-		value += 25
+		value += 5

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c8dnw56t41d44"]
 
-[ext_resource type="FontFile" uid="uid://bkxa3xvcsxrbk" path="res://shared_resources/fonts/roboto/static/Roboto-Bold.ttf" id="1_ikpad"]
 [ext_resource type="Script" path="res://main_screens/main_menu/main_menu.gd" id="1_lo8ma"]
 [ext_resource type="Texture2D" uid="uid://bkmohkyyah5j3" path="res://game/avatars/player.webp" id="2_bk7be"]
+[ext_resource type="FontFile" uid="uid://c3bw11ojwfbb7" path="res://shared_resources/fonts/bouncy/Bouncy-Thin.otf" id="2_lxb8k"]
 [ext_resource type="Texture2D" uid="uid://c6wqabxilr7cl" path="res://logo.png" id="4_pvfad"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3vf2"]
@@ -85,7 +85,7 @@ clip_contents = true
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
-theme_override_fonts/font = ExtResource("1_ikpad")
+theme_override_fonts/font = ExtResource("2_lxb8k")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/hover = SubResource("StyleBoxFlat_r3vf2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1udwp")
@@ -97,7 +97,7 @@ clip_contents = true
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
-theme_override_fonts/font = ExtResource("1_ikpad")
+theme_override_fonts/font = ExtResource("2_lxb8k")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/hover = SubResource("StyleBoxFlat_r3vf2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1udwp")
@@ -109,7 +109,7 @@ clip_contents = true
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
-theme_override_fonts/font = ExtResource("1_ikpad")
+theme_override_fonts/font = ExtResource("2_lxb8k")
 theme_override_font_sizes/font_size = 42
 theme_override_styles/hover = SubResource("StyleBoxFlat_r3vf2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1udwp")

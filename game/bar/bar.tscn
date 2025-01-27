@@ -15,7 +15,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqkwq"]
-bg_color = Color(1, 0.466667, 0.658824, 1)
+bg_color = Color(1, 0.92549, 0.152941, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -39,7 +39,7 @@ show_percentage = false
 script = ExtResource("1_0htlm")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.01
 autostart = true
 
 [node name="Anim" type="AnimationPlayer" parent="."]

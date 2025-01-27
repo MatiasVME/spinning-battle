@@ -15,6 +15,10 @@ run/main_scene="res://main_screens/intro/intro.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://game/avatars/player.webp"
 
+[autoload]
+
+Signals="*res://game/autoloads/Signals.gd"
+
 [display]
 
 window/size/viewport_width=1280

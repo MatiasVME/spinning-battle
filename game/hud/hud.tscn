@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://ffuxbuuj0hvv"]
+
+[ext_resource type="Script" path="res://game/hud/hud.gd" id="1_aur1m"]
+[ext_resource type="Texture2D" uid="uid://siqelu8xot0r" path="res://game/stage/mapaBatalla.png" id="1_phir1"]
+[ext_resource type="Texture2D" uid="uid://bkmohkyyah5j3" path="res://game/avatars/player.webp" id="2_jyk6s"]
+[ext_resource type="Texture2D" uid="uid://b808qfbqockur" path="res://game/avatars/boss_cat.webp" id="3_m6e2j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j3y4"]
+bg_color = Color(0.372549, 0.341176, 0.309804, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6320"]
+bg_color = Color(1, 0.466667, 0.658824, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nvfvf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_m6e2j")
+}],
+"loop": true,
+"name": &"cat",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4myk"]
+bg_color = Color(1, 0, 0.301961, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Hud" type="Node2D"]
+script = ExtResource("1_aur1m")
+
+[node name="Placeholder" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_phir1")
+centered = false
+
+[node name="AvatarPlayer" type="Sprite2D" parent="."]
+position = Vector2(190, 68)
+scale = Vector2(0.230769, 0.230769)
+texture = ExtResource("2_jyk6s")
+
+[node name="PlayerHP" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 240.0
+offset_top = 13.0
+offset_right = 440.0
+offset_bottom = 40.0
+theme_override_styles/background = SubResource("StyleBoxFlat_3j3y4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_p6320")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="AvatarEnemy" type="AnimatedSprite2D" parent="."]
+position = Vector2(1104, 68)
+scale = Vector2(0.230769, 0.230769)
+sprite_frames = SubResource("SpriteFrames_nvfvf")
+animation = &"cat"
+
+[node name="EnemyHP" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 857.0
+offset_top = 13.0
+offset_right = 1057.0
+offset_bottom = 40.0
+theme_override_styles/background = SubResource("StyleBoxFlat_3j3y4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_u4myk")
+step = 1.0
+value = 50.0
+show_percentage = false
