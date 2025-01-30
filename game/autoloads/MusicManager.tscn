@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://cubrppjlct5c6"]
+
+[ext_resource type="Script" path="res://game/autoloads/music_manager.gd" id="1_g7wtn"]
+[ext_resource type="AudioStream" uid="uid://cuebb5p0j8g12" path="res://shared_resources/audio/bgm/ElevatorMusic2.ogg" id="2_0qd16"]
+[ext_resource type="AudioStream" uid="uid://nxvoekbns3x0" path="res://shared_resources/audio/bgm/Frets.ogg" id="3_doobq"]
+[ext_resource type="AudioStream" uid="uid://gkudwjp7dk8h" path="res://shared_resources/audio/bgm/OneStepAtATIme.ogg" id="4_etbmp"]
+[ext_resource type="AudioStream" uid="uid://dhvo6erd38i1d" path="res://shared_resources/audio/bgm/Richer than me.ogg" id="5_1ymvo"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_pp1kr"]
+shuffle = true
+stream_count = 4
+stream_0 = ExtResource("2_0qd16")
+stream_1 = ExtResource("3_doobq")
+stream_2 = ExtResource("4_etbmp")
+stream_3 = ExtResource("5_1ymvo")
+
+[node name="MusicManager" type="Node2D"]
+script = ExtResource("1_g7wtn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_pp1kr")
+volume_db = -10.0
+autoplay = true

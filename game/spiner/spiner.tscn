@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c2itqdhuwutdm"]
+[gd_scene load_steps=27 format=3 uid="uid://c2itqdhuwutdm"]
 
 [ext_resource type="Script" path="res://game/spiner/spiner.gd" id="1_xpuqu"]
 [ext_resource type="Texture2D" uid="uid://dbhtx7x0kl5dw" path="res://game/spiner/spiner_cat.png" id="2_63yhg"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bowtkhvgwcfq8" path="res://shared_resources/audio/sfx/hit_light_3.ogg" id="11_000wj"]
 [ext_resource type="AudioStream" uid="uid://csiwh5x8vnq5x" path="res://shared_resources/audio/sfx/hit_light_4.ogg" id="12_6tom5"]
 [ext_resource type="AudioStream" uid="uid://wuquv4va0awv" path="res://shared_resources/audio/sfx/hit_light_5.ogg" id="13_3cfy1"]
+[ext_resource type="AudioStream" uid="uid://xj65ccn7qxfl" path="res://shared_resources/audio/sfx/spinner_recharge.ogg" id="16_rsixo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p6msk"]
 bounce = 0.8
@@ -237,6 +238,10 @@ max_distance = 1280.0
 [node name="Hit5" type="AudioStreamPlayer2D" parent="Bounce"]
 stream = ExtResource("13_3cfy1")
 max_distance = 1280.0
+
+[node name="Recharge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_rsixo")
+max_distance = 1920.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]

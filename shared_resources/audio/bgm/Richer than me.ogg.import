@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dhvo6erd38i1d"
+path="res://.godot/imported/Richer than me.ogg-4f072521f7b519674a6017e3261cbc6b.oggvorbisstr"
+
+[deps]
+
+source_file="res://shared_resources/audio/bgm/Richer than me.ogg"
+dest_files=["res://.godot/imported/Richer than me.ogg-4f072521f7b519674a6017e3261cbc6b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

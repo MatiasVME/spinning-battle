@@ -49,6 +49,22 @@ func _process(delta: float) -> void:
 		$Sprite["self_modulate"] = Color.WHITE
 		can_damage = false
 		_play_rand_sound_bounce()
+	
+	if Input.is_action_just_pressed("click"):
+		$Recharge.play()
+	elif Input.is_action_just_released("click"):
+		$Recharge.stop()
+	
+	if is_player and Input.is_action_pressed("click"):
+		$Sprite.scale.x = clamp($Sprite.scale.x + delta * 0.1, 0.4, 0.65)
+	elif is_player and Input.is_action_just_released("click"):
+		var tween = create_tween()
+		tween.tween_property(
+			$Sprite, 
+			"scale", 
+			Vector2(0.4, 0.4), 
+			1.0
+		).from_current().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 
 
 func _on_boosted(force, is_player):

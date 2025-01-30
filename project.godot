@@ -19,6 +19,7 @@ config/icon="res://game/avatars/player.webp"
 
 Signals="*res://game/autoloads/Signals.gd"
 Main="*res://game/autoloads/Main.gd"
+MusicManager="*res://game/autoloads/MusicManager.tscn"
 
 [display]
 
