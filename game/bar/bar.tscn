@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxd0bxq1sqix6"]
+[gd_scene load_steps=5 format=3 uid="uid://dxd0bxq1sqix6"]
 
 [ext_resource type="Script" path="res://game/bar/bar.gd" id="1_0htlm"]
+[ext_resource type="Texture2D" uid="uid://shp02nk66exl" path="res://game/spiner/TrompoMedidor.png" id="2_d8qx0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4lao"]
 bg_color = Color(0.372549, 0.341176, 0.309804, 1)
@@ -43,5 +44,10 @@ wait_time = 0.01
 autostart = true
 
 [node name="Anim" type="AnimationPlayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.00001, 9.53674e-07)
+scale = Vector2(0.424, 0.424)
+texture = ExtResource("2_d8qx0")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

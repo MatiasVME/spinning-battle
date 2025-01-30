@@ -96,7 +96,7 @@ step = 1.0
 show_percentage = false
 
 [node name="AvatarEnemy" type="AnimatedSprite2D" parent="."]
-position = Vector2(1104, 68)
+position = Vector2(1104, 72)
 scale = Vector2(0.230769, 0.230769)
 sprite_frames = SubResource("SpriteFrames_nvfvf")
 animation = &"cat"
