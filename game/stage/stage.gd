@@ -42,6 +42,11 @@ func _on_player_dead():
 func _on_enemy_dead():
 	boss_spiner.queue_free()
 	
+	match Main.boss_selected:
+		0: Main.is_cat_defeated = true
+		1: Main.is_king_defeated = true
+		2: Main.is_lizard_defeated = true
+	
 	$EndLevel.win()
 
 
