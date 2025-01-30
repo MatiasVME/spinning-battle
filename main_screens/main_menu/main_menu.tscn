@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8dnw56t41d44"]
+[gd_scene load_steps=13 format=3 uid="uid://c8dnw56t41d44"]
 
+[ext_resource type="Script" path="res://main_screens/main_menu/main_menu.gd" id="1_lo8ma"]
 [ext_resource type="Texture2D" uid="uid://byvnoes468onc" path="res://main_screens/main_menu/menu_ui/bg_menu.png" id="2_2nu03"]
 [ext_resource type="Texture2D" uid="uid://b808qfbqockur" path="res://game/avatars/boss_cat.webp" id="3_g3kij"]
 [ext_resource type="Texture2D" uid="uid://dadfngi75c10u" path="res://main_screens/main_menu/menu_ui/logomenu.png" id="4_7172c"]
@@ -19,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lo8ma")
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 0
