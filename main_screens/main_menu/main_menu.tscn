@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8dnw56t41d44"]
+[gd_scene load_steps=11 format=3 uid="uid://c8dnw56t41d44"]
 
 [ext_resource type="Script" path="res://main_screens/main_menu/main_menu.gd" id="1_lo8ma"]
 [ext_resource type="Texture2D" uid="uid://byvnoes468onc" path="res://main_screens/main_menu/menu_ui/bg_menu.png" id="2_2nu03"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://ddq12htbcjuu5" path="res://main_screens/main_menu/menu_ui/bossKing.png" id="6_a773v"]
 [ext_resource type="Texture2D" uid="uid://cjc6wh6e4p070" path="res://main_screens/main_menu/menu_ui/bossLagarto.png" id="7_7f8v0"]
 [ext_resource type="Texture2D" uid="uid://bmqicgo4dgib1" path="res://main_screens/main_menu/menu_ui/leygatito.png" id="9_7cf1q"]
+[ext_resource type="Texture2D" uid="uid://bfktmn37o1xiw" path="res://main_screens/main_menu/menu_ui/leylagarto.png" id="9_emoa5"]
+[ext_resource type="Texture2D" uid="uid://doxi6xvlojasn" path="res://main_screens/main_menu/menu_ui/leymichomucha.png" id="10_011c2"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -54,3 +56,13 @@ texture = ExtResource("4_7172c")
 [node name="globo_cat" type="Sprite2D" parent="."]
 position = Vector2(432, 208)
 texture = ExtResource("9_7cf1q")
+
+[node name="globo_lagarto" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(968, 208)
+texture = ExtResource("9_emoa5")
+
+[node name="globo_michumucha" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(665, 134)
+texture = ExtResource("10_011c2")

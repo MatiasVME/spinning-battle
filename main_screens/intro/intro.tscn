@@ -4,18 +4,6 @@
 [ext_resource type="Script" path="res://main_screens/intro/intro.gd" id="1_pdbju"]
 [ext_resource type="Texture2D" uid="uid://h8rux2m5jwhe" path="res://main_screens/intro/story/bg_intro.png" id="2_sefid"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u37f4"]
-bg_color = Color(0.160784, 0.678431, 1, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(1, 0.466667, 0.658824, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6oqgn"]
 bg_color = Color(0.160784, 0.678431, 1, 1)
 border_width_left = 10
@@ -35,6 +23,18 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0, 0.529412, 0.317647, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u37f4"]
+bg_color = Color(0.160784, 0.678431, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.466667, 0.658824, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -96,6 +96,7 @@ grow_vertical = 2
 color = Color(1, 0.945098, 0.909804, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 2.0
 offset_top = -3.0
 offset_right = 1282.0
@@ -109,23 +110,22 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -100.0
+offset_left = -262.0
+offset_top = -90.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="Continue" type="Button" parent="Margin"]
-clip_contents = true
-custom_minimum_size = Vector2(400, 100)
+custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
 theme_override_fonts/font = ExtResource("1_obl8q")
 theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = SubResource("StyleBoxFlat_u37f4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6oqgn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cu812")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u37f4")
 text = "Continue"
 
 [node name="Background2" type="ColorRect" parent="."]

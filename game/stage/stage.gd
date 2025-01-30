@@ -41,7 +41,12 @@ func _on_started():
 
 func _on_player_dead():
 	player_spiner.queue_free()
+	
+	$EndLevel.lose()
 
 
 func _on_enemy_dead():
 	boss_spiner.queue_free()
+	
+	$EndLevel.win()
+	

@@ -10,7 +10,7 @@ var player_hp := 1000:
 		else:
 			Signals.player_dead.emit()
 
-var enemy_hp = 1000:
+var enemy_hp := 1000:
 	set(value):
 		enemy_hp = value
 		
@@ -18,3 +18,8 @@ var enemy_hp = 1000:
 			Signals.enemy_hp_changed.emit(value)
 		else:
 			Signals.enemy_dead.emit()
+
+
+func rechage():
+	player_hp = 1000
+	enemy_hp = 1000

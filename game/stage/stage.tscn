@@ -1,10 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://d13xfdsi4bpip"]
+[gd_scene load_steps=10 format=3 uid="uid://d13xfdsi4bpip"]
 
 [ext_resource type="Script" path="res://game/stage/stage.gd" id="1_4pmbq"]
 [ext_resource type="Texture2D" uid="uid://lgfqt0unmdmj" path="res://game/stage/nivelGatito.png" id="2_8bq7x"]
+[ext_resource type="Texture2D" uid="uid://siqelu8xot0r" path="res://game/stage/mapaBatalla.png" id="3_dx0cr"]
 [ext_resource type="PackedScene" uid="uid://dxd0bxq1sqix6" path="res://game/bar/bar.tscn" id="3_nma2k"]
+[ext_resource type="Texture2D" uid="uid://bkyy0e5ko47fn" path="res://game/stage/nivelLagarto.png" id="3_vks43"]
 [ext_resource type="PackedScene" uid="uid://ffuxbuuj0hvv" path="res://game/hud/hud.tscn" id="4_cjk3c"]
 [ext_resource type="PackedScene" uid="uid://py0bgy0hljym" path="res://game/cooldown/cooldown.tscn" id="5_vslli"]
+[ext_resource type="PackedScene" uid="uid://b1efdojbpg6am" path="res://game/end_level/end_level.tscn" id="8_1732c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4k7qy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8bq7x")
+}],
+"loop": true,
+"name": &"cat_stage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dx0cr")
+}],
+"loop": true,
+"name": &"king_stage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vks43")
+}],
+"loop": true,
+"name": &"lagarto_stage",
+"speed": 5.0
+}]
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_4pmbq")
@@ -15,8 +45,9 @@ metadata/_edit_lock_ = true
 [node name="CollisionPolygon" type="CollisionPolygon2D" parent="Edges"]
 polygon = PackedVector2Array(92, 145, 1174, 151, 1178, 681, 84, 682, 88, 65, 28, 66, 29, 735, 1259, 725, 1248, 70, 91, 65)
 
-[node name="Floor" type="Sprite2D" parent="."]
-texture = ExtResource("2_8bq7x")
+[node name="Floor" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4k7qy")
+animation = &"king_stage"
 centered = false
 metadata/_edit_lock_ = true
 
@@ -34,3 +65,14 @@ offset_left = 631.0
 offset_top = 385.0
 offset_right = 631.0
 offset_bottom = 385.0
+
+[node name="EndLevel" parent="." instance=ExtResource("8_1732c")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 631.0
+offset_top = 380.0
+offset_right = 631.0
+offset_bottom = 380.0
