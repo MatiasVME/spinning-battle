@@ -123,3 +123,8 @@ func _on_area_body_entered(body: Node2D) -> void:
 		
 		$Sprite["self_modulate"] = Color.WHITE
 		can_damage = false
+
+
+func _on_dead_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "dead":
+		queue_free()

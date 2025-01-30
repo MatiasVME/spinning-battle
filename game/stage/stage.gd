@@ -34,13 +34,13 @@ func _on_started():
 
 
 func _on_player_dead():
-	player_spiner.queue_free()
+	player_spiner.get_node("Dead").play("dead")
 	
 	$EndLevel.lose()
 
 
 func _on_enemy_dead():
-	boss_spiner.queue_free()
+	boss_spiner.get_node("Dead").play("dead")
 	
 	match Main.boss_selected:
 		0: Main.is_cat_defeated = true
@@ -58,6 +58,8 @@ func _on_ready() -> void:
 		1:
 			$Floor.animation = "king_stage"
 			$Hud/AvatarEnemy.animation = "king"
+			Main.enemy_hp *= 1.2
 		2:
 			$Floor.animation = "lizard_stage"
 			$Hud/AvatarEnemy.animation = "lizard"
+			Main.enemy_hp *= 1.5

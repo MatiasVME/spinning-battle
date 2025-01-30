@@ -7,6 +7,8 @@ func _ready() -> void:
 	
 	Signals.player_hp_changed.connect(_on_player_hp_changed)
 	Signals.enemy_hp_changed.connect(_on_enemy_hp_changed)
+	
+	$EnemyHP.max_value = Main.enemy_hp
 
 
 func _on_player_hp_changed(new_hp) -> void:
