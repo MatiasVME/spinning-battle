@@ -47,7 +47,7 @@ polygon = PackedVector2Array(92, 145, 1174, 151, 1178, 681, 84, 682, 88, 65, 28,
 
 [node name="Floor" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4k7qy")
-animation = &"cat_stage"
+animation = &"king_stage"
 centered = false
 metadata/_edit_lock_ = true
 
