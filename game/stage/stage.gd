@@ -1,9 +1,7 @@
 extends Node2D
 
-var spiner = preload("res://game/spiner/spiner.tscn")
-
-var player_spiner : Spinner
-var boss_spiner : Spinner
+var player_spiner = preload("res://game/spiner/spiner.tscn").instantiate()
+var boss_spiner = preload("res://game/spiner/spiner.tscn").instantiate()
 
 
 func _ready() -> void:
@@ -11,21 +9,17 @@ func _ready() -> void:
 
 
 func create_player_spiner():
-	var spiner_inst = spiner.instantiate()
-	spiner_inst.global_position = Vector2(randi_range(150, 1150), randi_range(150, 675))
-	player_spiner = spiner_inst
-	add_child(spiner_inst)
+	player_spiner.global_position = Vector2(randi_range(150, 1150), randi_range(150, 675))
+	add_child(player_spiner)
 
 
 func create_boss_spiner():
-	var spiner_inst = spiner.instantiate()
-	spiner_inst.global_position = Vector2(randi_range(150, 1150), randi_range(150, 675))
-	boss_spiner = spiner_inst
+	boss_spiner.global_position = Vector2(randi_range(150, 1150), randi_range(150, 675))
 	boss_spiner.is_player = false
 	
 	boss_spiner.get_node("Sprite").animation = "cat"
 	
-	add_child(spiner_inst)
+	add_child(boss_spiner)
 
 
 func _on_started():
@@ -49,4 +43,16 @@ func _on_enemy_dead():
 	boss_spiner.queue_free()
 	
 	$EndLevel.win()
-	
+
+
+func _on_ready() -> void:
+	match Main.boss_selected:
+		0:
+			$Floor.animation = "cat_stage"
+			$Hud/AvatarEnemy.animation = "cat"
+		1:
+			$Floor.animation = "king_stage"
+			$Hud/AvatarEnemy.animation = "king"
+		2:
+			$Floor.animation = "lizard_stage"
+			$Hud/AvatarEnemy.animation = "lizard"

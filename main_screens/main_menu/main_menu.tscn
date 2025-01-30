@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8dnw56t41d44"]
+[gd_scene load_steps=12 format=3 uid="uid://c8dnw56t41d44"]
 
-[ext_resource type="Script" path="res://main_screens/main_menu/main_menu.gd" id="1_lo8ma"]
 [ext_resource type="Texture2D" uid="uid://byvnoes468onc" path="res://main_screens/main_menu/menu_ui/bg_menu.png" id="2_2nu03"]
+[ext_resource type="Texture2D" uid="uid://b808qfbqockur" path="res://game/avatars/boss_cat.webp" id="3_g3kij"]
 [ext_resource type="Texture2D" uid="uid://dadfngi75c10u" path="res://main_screens/main_menu/menu_ui/logomenu.png" id="4_7172c"]
 [ext_resource type="Script" path="res://main_screens/main_menu/btn_cat.gd" id="4_fbkmq"]
-[ext_resource type="Texture2D" uid="uid://bxc6ab21eggq6" path="res://main_screens/main_menu/menu_ui/bossGatito.png" id="5_qgjmb"]
-[ext_resource type="Texture2D" uid="uid://ddq12htbcjuu5" path="res://main_screens/main_menu/menu_ui/bossKing.png" id="6_a773v"]
-[ext_resource type="Texture2D" uid="uid://cjc6wh6e4p070" path="res://main_screens/main_menu/menu_ui/bossLagarto.png" id="7_7f8v0"]
+[ext_resource type="Texture2D" uid="uid://bqxng8gv5gmii" path="res://game/avatars/bossKing.png" id="5_moq45"]
+[ext_resource type="Script" path="res://main_screens/main_menu/btn_king.gd" id="6_t7urt"]
+[ext_resource type="Texture2D" uid="uid://dy3d4dmjf1mbq" path="res://game/avatars/bossLagarto.png" id="7_0dd5o"]
+[ext_resource type="Script" path="res://main_screens/main_menu/btn_lagarto.gd" id="8_bgnt0"]
 [ext_resource type="Texture2D" uid="uid://bmqicgo4dgib1" path="res://main_screens/main_menu/menu_ui/leygatito.png" id="9_7cf1q"]
 [ext_resource type="Texture2D" uid="uid://bfktmn37o1xiw" path="res://main_screens/main_menu/menu_ui/leylagarto.png" id="9_emoa5"]
 [ext_resource type="Texture2D" uid="uid://doxi6xvlojasn" path="res://main_screens/main_menu/menu_ui/leymichomucha.png" id="10_011c2"]
@@ -18,7 +19,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lo8ma")
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 0
@@ -26,21 +26,35 @@ offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_2nu03")
 
-[node name="btn_cat" type="Sprite2D" parent="."]
-position = Vector2(241, 375)
+[node name="btn_cat" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 240.0
+offset_right = 612.0
+offset_bottom = 740.0
 scale = Vector2(0.522, 0.522)
-texture = ExtResource("5_qgjmb")
+texture_normal = ExtResource("3_g3kij")
 script = ExtResource("4_fbkmq")
 
-[node name="btn_king" type="Sprite2D" parent="."]
-position = Vector2(631, 316)
+[node name="btn_king" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 176.0
+offset_right = 1005.0
+offset_bottom = 676.0
 scale = Vector2(0.522, 0.522)
-texture = ExtResource("6_a773v")
+texture_normal = ExtResource("5_moq45")
+script = ExtResource("6_t7urt")
 
-[node name="btn_lagarto" type="Sprite2D" parent="."]
-position = Vector2(1038, 385)
+[node name="btn_lagarto" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 251.0
+offset_right = 1418.0
+offset_bottom = 751.0
 scale = Vector2(0.522, 0.522)
-texture = ExtResource("7_7f8v0")
+texture_normal = ExtResource("7_0dd5o")
+script = ExtResource("8_bgnt0")
 
 [node name="logo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -54,6 +68,7 @@ grow_horizontal = 2
 texture = ExtResource("4_7172c")
 
 [node name="globo_cat" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(432, 208)
 texture = ExtResource("9_7cf1q")
 
@@ -66,3 +81,13 @@ texture = ExtResource("9_emoa5")
 visible = false
 position = Vector2(665, 134)
 texture = ExtResource("10_011c2")
+
+[connection signal="mouse_entered" from="btn_cat" to="btn_cat" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="btn_cat" to="btn_cat" method="_on_mouse_exited"]
+[connection signal="pressed" from="btn_cat" to="btn_cat" method="_on_pressed"]
+[connection signal="mouse_entered" from="btn_king" to="btn_king" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="btn_king" to="btn_king" method="_on_mouse_exited"]
+[connection signal="pressed" from="btn_king" to="btn_king" method="_on_pressed"]
+[connection signal="mouse_entered" from="btn_lagarto" to="btn_lagarto" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="btn_lagarto" to="btn_lagarto" method="_on_mouse_exited"]
+[connection signal="pressed" from="btn_lagarto" to="btn_lagarto" method="_on_pressed"]

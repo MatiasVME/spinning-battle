@@ -1,6 +1,6 @@
 extends TextureButton
 
-@onready var globo = $"../globo_cat"
+@onready var globo = $"../globo_michumucha"
 
 
 func _ready():
@@ -16,5 +16,5 @@ func _on_mouse_exited() -> void:
 
 
 func _on_pressed() -> void:
-	Main.boss_selected = 0
+	Main.boss_selected = 1
 	get_tree().change_scene_to_file("res://game/stage/stage.tscn")

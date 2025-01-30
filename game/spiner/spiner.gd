@@ -23,6 +23,11 @@ var last_force := 0
 func _ready() -> void:
 	if is_player:
 		Signals.boosted.connect(_on_boosted)
+	else:
+		match Main.boss_selected:
+			0: $Sprite.animation = "cat"
+			1: $Sprite.animation = "king"
+			2: $Sprite.animation = "lizard"
 	
 	apply_central_impulse(Vector2(randi_range(-500, 500), randi_range(-500, 500)))
 

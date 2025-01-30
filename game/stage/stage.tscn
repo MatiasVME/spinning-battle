@@ -32,7 +32,7 @@ animations = [{
 "texture": ExtResource("3_vks43")
 }],
 "loop": true,
-"name": &"lagarto_stage",
+"name": &"lizard_stage",
 "speed": 5.0
 }]
 
@@ -47,7 +47,7 @@ polygon = PackedVector2Array(92, 145, 1174, 151, 1178, 681, 84, 682, 88, 65, 28,
 
 [node name="Floor" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4k7qy")
-animation = &"king_stage"
+animation = &"cat_stage"
 centered = false
 metadata/_edit_lock_ = true
 
@@ -76,3 +76,5 @@ offset_left = 631.0
 offset_top = 380.0
 offset_right = 631.0
 offset_bottom = 380.0
+
+[connection signal="ready" from="." to="." method="_on_ready"]

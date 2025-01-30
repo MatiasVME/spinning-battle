@@ -19,6 +19,11 @@ var enemy_hp := 1000:
 		else:
 			Signals.enemy_dead.emit()
 
+var is_cat_defeated := false
+var is_king_defeated := false
+var is_lizard_defeated := false
+
+var boss_selected := -1 # 0 cat | 1 king | 2 lizard
 
 func rechage():
 	player_hp = 1000

@@ -54,7 +54,7 @@ animations = [{
 "texture": ExtResource("6_vno1h")
 }],
 "loop": true,
-"name": &"lagarto",
+"name": &"lizard",
 "speed": 5.0
 }]
 
@@ -99,7 +99,7 @@ show_percentage = false
 position = Vector2(1104, 72)
 scale = Vector2(0.230769, 0.230769)
 sprite_frames = SubResource("SpriteFrames_nvfvf")
-animation = &"cat"
+animation = &"lizard"
 
 [node name="EnemyHP" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(200, 0)

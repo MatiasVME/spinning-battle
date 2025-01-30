@@ -1,9 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://c2itqdhuwutdm"]
+[gd_scene load_steps=26 format=3 uid="uid://c2itqdhuwutdm"]
 
 [ext_resource type="Script" path="res://game/spiner/spiner.gd" id="1_xpuqu"]
 [ext_resource type="Texture2D" uid="uid://dbhtx7x0kl5dw" path="res://game/spiner/spiner_cat.png" id="2_63yhg"]
+[ext_resource type="Texture2D" uid="uid://j004vlss5ttm" path="res://game/spiner/TrompoKing.png" id="3_b5wvu"]
 [ext_resource type="Texture2D" uid="uid://bildg5q5iqwyj" path="res://game/spiner/spiner_player.png" id="3_yruae"]
 [ext_resource type="AudioStream" uid="uid://bokux45kxrivl" path="res://shared_resources/audio/sfx/hit_heavy_1.ogg" id="4_c1eyt"]
+[ext_resource type="Texture2D" uid="uid://dmfx1mni35p8v" path="res://game/spiner/trompoLagarto.png" id="4_x52yi"]
 [ext_resource type="AudioStream" uid="uid://ccskxapa3vyo7" path="res://shared_resources/audio/sfx/hit_heavy_2.ogg" id="5_27sg0"]
 [ext_resource type="AudioStream" uid="uid://dq7agu5s40snl" path="res://shared_resources/audio/sfx/hit_heavy_3.ogg" id="6_12tni"]
 [ext_resource type="AudioStream" uid="uid://yw5m4i5l1433" path="res://shared_resources/audio/sfx/hit_heavy_4.ogg" id="7_amnmw"]
@@ -28,6 +30,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"cat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b5wvu")
+}],
+"loop": true,
+"name": &"king",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x52yi")
+}],
+"loop": true,
+"name": &"lizard",
 "speed": 5.0
 }, {
 "frames": [{
